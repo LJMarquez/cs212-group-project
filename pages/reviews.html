@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="../css/reviews.css">
+</head>
+
+<body>
+    <div class="site-header">
+        <img class="logo-circle" src="../images/logo.png" alt="Logo">
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../pages/menu.html">Menu</a>
+            <a href="../pages/reservation.html">Book Reservation</a>
+            <a href="../pages/reviews.html">Reviews</a>
+            <a href="../pages/aboutus.html">About Us</a>
+        </nav>
+        <div class="search-box"><input type="text" placeholder="Search..."></div>
+    </div>
+
+    <div class="reviews-page">
+        <h1>Reviews</h1>
+
+        <div class="reviews-top-row">
+            <h2>Average Rating: <span>4.8</span> <span class="stars">★★★★☆</span></h2>
+            <button type="button">Write a Review</button>
+        </div>
+
+        <div class="review-form-box">
+            <div class="form-row">
+                <div class="name-group">
+                    <label for="review-name">Name:</label>
+                    <input id="review-name" type="text" placeholder="Name">
+                </div>
+
+                <div class="rating-group">
+                    <p>Rating:</p>
+                    <p class="rating-value">0/0 <span class="stars">☆☆☆☆☆</span></p>
+                </div>
+            </div>
+
+            <label for="review-comments">Additional Comments:</label>
+            <textarea id="review-comments" rows="4" placeholder="Additional comments..."></textarea>
+        </div>
+
+        <div class="review-cards">
+            <div class="review-card">
+                <h2>John Smith</h2>
+                <p class="stars">★★★★☆</p>
+                <p>Great bowling alley!</p>
+            </div>
+
+            <div class="review-card">
+                <h2>Tom Walker</h2>
+                <p class="stars">★★☆☆☆</p>
+                <p>The food wasn't good</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact Us:</p>
+        <div id="contact-info">
+            <p>123 Bowling Lane</p>
+            <p>City, State 12345</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+        <p>&copy; 2024 Bowling Alley. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
