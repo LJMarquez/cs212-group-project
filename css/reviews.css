@@ -5,44 +5,42 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1d2430;
-    color: #fff9ea;
+    background-color: #212529;
+    color: #ffffff;
 }
 
 .site-header {
-    border-bottom: 1px solid #8fa7b9;
+    border-bottom: 1px solid #495057;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background: rgba(185, 221, 255, 0.08);
+    background: #212529;
 }
 
 .logo-circle {
-    width: 42px;
-    height: 42px;
-    background: #f8bfd3;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
+    width: 70px;
+    height: auto;
+    display: block;
 }
 
 nav {
     display: flex;
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
 }
 
 nav a {
-    color: #fff9ea;
+    color: #ffffff;
     text-decoration: none;
     font-size: 16px;
+    padding: 8px 12px;
 }
 
 .search-box {
-    border: none;
-    background-color: #fff9ea;
+    border: 1px solid #495057;
+    background-color: #ffffff;
     width: 170px;
     text-align: center;
     padding: 8px 0;
@@ -54,20 +52,20 @@ nav a {
     width: 100%;
     padding: 4px;
     font-size: 14px;
-    background: #fff9ea;
+    background: #ffffff;
 }
 
 .reviews-page {
-    border-bottom: 1px solid #8fa7b9;
+    border-bottom: 1px solid #495057;
     padding: 20px;
     padding-top: 40px;
-    background: rgba(191, 232, 200, 0.06);
+    background: #212529;
 }
 
 h1 {
     text-align: center;
     margin: 0 0 20px;
-    color: #f8bfd3;
+    color: #ffffff;
 }
 
 .reviews-top-row {
@@ -78,9 +76,8 @@ h1 {
 }
 
 .reviews-top-row button {
-    border: none;
-    background: #f8bfd3;
-    color: #212733;
+    background: #343a40;
+    color: #ffffff;
     padding: 10px 20px;
     font-size: 14px;
     font-weight: 600;
@@ -88,7 +85,7 @@ h1 {
 }
 
 .review-form-box {
-    background: rgba(185, 221, 255, 0.06);
+    background: #2b3035;
     padding: 15px;
     margin-bottom: 14px;
     border-radius: 6px;
@@ -108,15 +105,16 @@ h1 {
 label {
     display: block;
     margin-bottom: 10px;
+    color: #ffffff;
 }
 
 input,
 textarea {
     width: 100%;
-    border: 1px solid #9eb8a8;
+    border: 1px solid #495057;
     padding: 10px;
-    background: #fff9ea;
-    color: #212733;
+    background: #ffffff;
+    color: #212529;
     font-family: inherit;
 }
 
@@ -146,18 +144,23 @@ textarea {
 .review-card {
     min-height: 200px;
     padding: 14px;
-    background: rgba(248, 191, 211, 0.09);
+    background: #2b3035;
     border-radius: 6px;
 }
 
 .review-card h2 {
     margin: 0 0 6px;
     font-weight: 400;
+    color: #ffffff;
+}
+
+.review-card p {
+    color: #ced4da;
 }
 
 footer {
-    border-top: 1px solid #8fa7b9;
-    background: rgba(248, 191, 211, 0.08);
+    border-top: 1px solid #495057;
+    background: #212529;
     text-align: center;
     padding: 20px;
 }

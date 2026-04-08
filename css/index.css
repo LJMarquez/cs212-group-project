@@ -5,44 +5,42 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #1d2430;
-    color: #fff9ea;
+    background-color: #212529;
+    color: #ffffff;
 }
 
 .site-header {
-    border-bottom: 1px solid #8fa7b9;
+    border-bottom: 1px solid #495057;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background: rgba(185, 221, 255, 0.08);
+    background: #212529;
 }
 
 .logo-circle {
-    width: 42px;
-    height: 42px;
-    background: #f8bfd3;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
+    width: 70px;
+    height: auto;
+    display: block;
 }
 
 nav {
     display: flex;
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
 }
 
 nav a {
-    color: #fff9ea;
+    color: #ffffff;
     text-decoration: none;
     font-size: 16px;
+    padding: 8px 12px;
 }
 
 .search-box {
-    border: none;
-    background-color: #fff9ea;
+    border: 1px solid #495057;
+    background-color: #ffffff;
     width: 170px;
     text-align: center;
     padding: 8px 0;
@@ -54,11 +52,11 @@ nav a {
     width: 100%;
     padding: 4px;
     font-size: 14px;
-    background: #fff9ea;
+    background: #ffffff;
 }
 
 .hero {
-    border-bottom: 1px solid #8fa7b9;
+    border-bottom: 1px solid #495057;
     padding: 16px;
     min-height: 280px;
     display: flex;
@@ -71,20 +69,20 @@ nav a {
 
 .hero h1 {
     font-size: 32px;
-    background-color: rgba(29, 36, 48, 0.82);
+    background-color: rgba(33, 37, 41, 0.85);
     padding: 12px 24px;
     border-radius: 8px;
 }
 
 .row {
-    border-bottom: 1px solid #8fa7b9;
+    border-bottom: 1px solid #495057;
     min-height: 130px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 20px;
     padding: 8px;
-    background: rgba(185, 221, 255, 0.06);
+    background: #2b3035;
 }
 
 .reverse {
@@ -105,12 +103,12 @@ nav a {
 }
 
 .text-box h1 {
-    color: #f8bfd3;
+    color: #ffffff;
 }
 
 footer {
-    border-top: 1px solid #8fa7b9;
-    background: rgba(248, 191, 211, 0.08);
+    border-top: 1px solid #495057;
+    background: #212529;
     text-align: center;
     padding: 20px;
 }
