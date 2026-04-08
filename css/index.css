@@ -5,22 +5,23 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: black;
-    color: white;
+    background-color: #1d2430;
+    color: #fff9ea;
 }
 
 .site-header {
-    border: 1px solid white;
+    border-bottom: 1px solid #8fa7b9;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
+    background: rgba(185, 221, 255, 0.08);
 }
 
 .logo-circle {
     width: 42px;
     height: 42px;
-    border: 2px solid white;
+    background: #f8bfd3;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -34,17 +35,18 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: #fff9ea;
     text-decoration: none;
     font-size: 16px;
 }
 
 .search-box {
-    border: 2px solid white;
-    background-color: white;
+    border: none;
+    background-color: #fff9ea;
     width: 170px;
     text-align: center;
     padding: 8px 0;
+    border-radius: 6px;
 }
 
 .search-box input {
@@ -52,12 +54,11 @@ nav a {
     width: 100%;
     padding: 4px;
     font-size: 14px;
+    background: #fff9ea;
 }
 
 .hero {
-    border-left: 3px solid white;
-    border-right: 3px solid white;
-    border-bottom: 3px solid white;
+    border-bottom: 1px solid #8fa7b9;
     padding: 16px;
     min-height: 280px;
     display: flex;
@@ -70,21 +71,20 @@ nav a {
 
 .hero h1 {
     font-size: 32px;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(29, 36, 48, 0.82);
     padding: 12px 24px;
     border-radius: 8px;
 }
 
 .row {
-    border-left: 3px solid white;
-    border-right: 3px solid white;
-    border-bottom: 3px solid white;
+    border-bottom: 1px solid #8fa7b9;
     min-height: 130px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 20px;
     padding: 8px;
+    background: rgba(185, 221, 255, 0.06);
 }
 
 .reverse {
@@ -92,21 +92,27 @@ nav a {
 }
 
 .image-box {
-    border: 3px solid #000;
     height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
+    border-radius: 8px;
 }
 
 .text-box {
     text-align: center;
 }
 
+.text-box h1 {
+    color: #f8bfd3;
+}
+
 footer {
-    border: 3px solid white;
+    border-top: 1px solid #8fa7b9;
+    background: rgba(248, 191, 211, 0.08);
     text-align: center;
+    padding: 20px;
 }
 
 #contact-info {
