@@ -103,38 +103,6 @@ h2 {
     border-radius: 6px;
 }
 
-#mozzarella-sticks {
-    background-image: url("../images/food/mozzarella-sticks.jpg");
-}
-
-#caesar-salad {
-    background-image: url("../images/food/caesar-salad.jpg");
-}
-
-#garlic-bread {
-    background-image: url("../images/food/garlic-bread.jpg");
-}
-
-#chicken-wings {
-    background-image: url("../images/food/wings.jpg");
-}
-
-#cheeseburger {
-    background-image: url("../images/food/cheeseburger.jpg");
-}
-
-#pizza {
-    background-image: url("../images/food/pizza.jpg");
-}
-
-#philly-cheesesteak {
-    background-image: url("../images/food/cheesesteak.jpg");
-}
-
-#nachos {
-    background-image: url("../images/food/nachos.jpg");
-}
-
 .item-copy h3 {
     margin: 0 0 8px;
     font-weight: 400;
@@ -173,4 +141,182 @@ footer {
     align-items: center;
     justify-content: space-around;
 
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: #2b3035;
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid #495057;
+    border-radius: 10px;
+    width: 85%;
+    max-width: 800px;
+    max-height: 85vh;
+    overflow-y: auto;
+    animation: slideDown 0.3s ease-out;
+    position: relative;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #ced4da;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 20px;
+    transition: color 0.2s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffffff;
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.modal-image {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    border: 2px solid #495057;
+    min-height: 300px;
+}
+
+.modal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-details h2 {
+    margin: 0 0 10px 0;
+    font-size: 32px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.modal-price {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.modal-price strong {
+    color: #28a745;
+    font-size: 28px;
+}
+
+.modal-description,
+.modal-expanded-details {
+    border-top: 1px solid #495057;
+    padding-top: 15px;
+}
+
+.modal-description h3,
+.modal-expanded-details h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.modal-description p,
+.modal-expanded-details p {
+    margin: 0;
+    color: #ced4da;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.modal-btn {
+    align-self: flex-start;
+    background-color: #495057;
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.modal-btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+.modal-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive modal for smaller screens */
+@media (max-width: 768px) {
+    .modal-body {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+        padding: 20px;
+    }
+    
+    .modal-details h2 {
+        font-size: 24px;
+    }
+    
+    .modal-price {
+        font-size: 20px;
+    }
+    
+    .modal-price strong {
+        font-size: 24px;
+    }
+    
+    .modal-image {
+        height: 250px;
+    }
 }
