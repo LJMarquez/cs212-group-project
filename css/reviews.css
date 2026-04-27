@@ -9,50 +9,13 @@ body {
     color: #ffffff;
 }
 
-.site-header {
-    border-bottom: 1px solid #495057;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background: #212529;
+.nav {
+    font-size: 20px;
 }
-
-.logo-circle {
-    width: 70px;
-    height: auto;
-    display: block;
-}
-
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 12px;
-}
-
-.search-box {
-    border: 1px solid #495057;
-    background-color: #ffffff;
-    width: 170px;
-    text-align: center;
-    padding: 8px 0;
-    border-radius: 6px;
-}
-
-.search-box input {
-    border: none;
-    width: 100%;
-    padding: 4px;
-    font-size: 14px;
-    background: #ffffff;
+.brand-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .reviews-page {

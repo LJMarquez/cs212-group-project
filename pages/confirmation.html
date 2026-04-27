@@ -49,37 +49,41 @@
             <!-- Your Information -->
             <div class="col-md-5 mx-auto">
                 <div class="neon-box">
-                    <h4 class="text-center mb-5">Your Information</h4>
+                    <h3 class="text-center fw-bold mb-5">Bowling Alley Voucher</h3>
 
                     <div class="mb-4 row">
-                        <label class="col-sm-4 col-form-label">First Name</label>
+                        <label class="col-sm-4 col-form-label">Name: </label>
                         <div class="col-sm-8">
-                            <span id="firstName"></span>
+                            <span id="name"></span>
                         </div>
                     </div>
                     <div class="mb-4 row">
-                        <label class="col-sm-4 col-form-label">Last Name</label>
+                        <label class="col-sm-4 col-form-label">Date: </label>
                         <div class="col-sm-8">
-                            <span id="lastName"></span>
+                            <span id="date"></span>
                         </div>
                     </div>
                     <div class="mb-4 row">
-                        <label class="col-sm-4 col-form-label">Time</label>
+                        <label class="col-sm-4 col-form-label">Time: </label>
                         <div class="col-sm-8">
-                            <span id="time"
+                            <span id="time"></span>
                         </div>
                     </div>
                     <div class="mb-4 row">
-                        <label class="col-sm-4 col-form-label">Tickets</label>
+                        <label class="col-sm-4 col-form-label">Tickets: </label>
                         <div class="col-sm-8">
                             <span id="tickets"></span>
                         </div>
                     </div>
-
+                    <div class="mb-4 text-center">
+                        <h5>Confirmation #</h5>
+                        <span id="confirmationNumber" class="fw-bold"></span>
+                    </div>
                 </div>
             </div>
             <div class="text-center mt-4">
                 <button class="btn neon-btn me-2" onclick="window.print()">Print</button>
+                <button class="btn neon-btn me-2">Download</button>
                 <a href="/index.html" class="btn neon-btn"> Back to Home</a>
             </div>
         </div>
@@ -102,5 +106,26 @@
         </div>
         <p class="text-center text-white">© 2025 Bowling Alley. All rights reserved.</p> 
     </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+
+        const firstName = params.get("firstName");
+        const lastName = params.get("lastName");
+        const date = params.get("date");
+        const time = params.get("time");
+        const tickets = params.get("tickets");
+
+        document.getElementById("name").textContent = (firstName || "") + " " + (lastName || "N/A");
+
+        document.getElementById("date").textContent = date || "N/A";
+        document.getElementById("time").textContent = time || "N/A";
+        document.getElementById("tickets").textContent = tickets || "N/A";
+
+        const confirmationNumber = "STL-" + Math.floor(100000 + Math.random() * 900000);
+        document.getElementById("confirmationNumber").textContent = confirmationNumber;
+    });
+    </script>
 </body>
 </html>

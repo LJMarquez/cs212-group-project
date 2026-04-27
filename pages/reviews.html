@@ -5,21 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reviews</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/reviews.css">
 </head>
 
 <body>
-    <div class="site-header">
-        <img class="logo-circle" src="../images/photos/bowling-logo.png" alt="Logo">
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="../pages/menu.html">Menu</a>
-            <a href="../pages/reservation.html">Book Reservation</a>
-            <a href="../pages/reviews.html">Reviews</a>
-            <a href="../pages/aboutus.html">About Us</a>
-        </nav>
-        <div class="search-box"><input type="text" placeholder="Search..."></div>
-    </div>
+    <!-- Navigation Bar -->
+    <header class="bg-dark py-3 border-bottom">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <!-- Logo -->
+            <div class="d-flex align-items-center">
+                <img src="/images/photos/bowling-logo.png" alt="Logo" width="70">    
+                <span class="ms-2 text-white brand-name">Starlight Lanes</span>
+            </div>
+            
+
+            <!-- Links -->
+            <ul class="nav">
+                <li><a href="/index.html" class="nav-link text-white">Home</a></li>
+                <li><a href="/pages/menu.html" class="nav-link text-white">Menu</a></li>
+                <li><a href="/pages/reservation.html" class="nav-link text-white">Book Reservation</a></li>
+                <li><a href="/pages/reviews.html" class="nav-link text-white">Reviews</a></li>
+                <li><a href="/pages/aboutus.html" class="nav-link text-white">About Us</a></li>
+            </ul>
+
+            <!-- Search -->
+            <input type="text" class="form-control w-auto" placeholder="Search...">
+        </div>
+    </header>
 
     <div class="reviews-page">
         <h1>Reviews</h1>

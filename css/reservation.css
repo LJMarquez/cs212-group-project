@@ -1,10 +1,16 @@
-* body {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
 }
 
 body {
     background-color: black;
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('/images/photos/reservation-photo.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 h1 {
@@ -26,8 +32,54 @@ footer {
     color:white;
 }
 
-.timeline-img {
-    width: 300px;
-    height: 200px;
-    border-radius: 5px;
+.neon-box {
+    border: 2px solid #ff2fd0;
+    border-radius: 10px;
+    padding: 20px;
+    background: #1c1c1c;
+
+    box-shadow:
+    0 0 5px rgba(0, 234, 255, 0.5),
+    0 0 10px rgba(255, 47, 208, 0.4);
 }
+.neon-box:hover {
+    border-color: #00eaff;
+}
+
+.form-control {
+    background-color: #2a2a2a;
+    border: 1px solid #00eaff;
+    color: white;
+}
+
+.neon-btn {
+    background-color: #2a2a2a;
+    border-color: #ff2fd0;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.neon-btn:hover {
+    background-color: #ff2fd0;
+    border-color: #7B2CBF;
+
+}
+
+.brand-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+img {
+    max-width: 900px;
+}
+
+.form-control::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
