@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reviews</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/reviews.css">
 </head>
 
 <body>
     <div class="site-header">
-        <img class="logo-circle" src="../images/photos/bowling-logo.png" alt="Logo">
+        <img class="logo-circle" src="../images/starlight-logo.png" alt="Logo">
         <nav>
             <a href="../index.html">Home</a>
             <a href="../pages/menu.html">Menu</a>
@@ -21,45 +22,40 @@
         <div class="search-box"><input type="text" placeholder="Search..."></div>
     </div>
 
-    <div class="reviews-page">
-        <h1>Reviews</h1>
+    <main class="reviews-page py-5">
+        <div class="container">
+            <h1 class="display-5 fw-semibold text-center mb-4">Reviews</h1>
 
-        <div class="reviews-top-row">
-            <h2>Average Rating: <span>4.8</span> <span class="stars">★★★★☆</span></h2>
-            <button type="button">Write a Review</button>
-        </div>
+            <div class="reviews-top-row d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-4">
+                <h2 class="average-rating mb-0">Average Rating: <span id="average-rating-value">4.8</span> <span id="average-rating-stars" class="stars">★★★★☆</span></h2>
+                <button id="toggle-review-form-button" type="button" class="btn btn-outline-light review-action-button">Write a Review</button>
+            </div>
 
-        <div class="review-form-box">
-            <div class="form-row">
-                <div class="name-group">
-                    <label for="review-name">Name:</label>
-                    <input id="review-name" type="text" placeholder="Name">
+            <form id="review-form" class="review-form-box hidden card border-0 shadow-lg p-4 mb-4" novalidate>
+                <div class="row g-4 mb-3">
+                    <div class="col-12 col-md-6">
+                        <label for="review-name" class="form-label">Name:</label>
+                        <input id="review-name" type="text" class="form-control review-input" placeholder="Name" required>
+                    </div>
+
+                    <div class="col-12 col-md-6 rating-group">
+                        <label class="form-label">Rating:</label>
+                        <p class="rating-value mb-2"><span id="rating-number">0</span>/5 <span id="rating-stars" class="stars interactive-stars" role="radiogroup" aria-label="Review rating"></span></p>
+                    </div>
                 </div>
 
-                <div class="rating-group">
-                    <p>Rating:</p>
-                    <p class="rating-value">0/0 <span class="stars">☆☆☆☆☆</span></p>
+                <label for="review-comments" class="form-label">Additional Comments:</label>
+                <textarea id="review-comments" rows="4" class="form-control review-input review-textarea" placeholder="Additional comments..." required></textarea>
+
+                <div class="review-form-actions d-flex justify-content-end gap-2 mt-3">
+                    <button id="submit-review-button" type="submit" class="btn btn-success review-submit-button">Submit Review</button>
+                    <button id="cancel-review-button" type="button" class="btn btn-outline-light review-cancel-button">Cancel</button>
                 </div>
-            </div>
+            </form>
 
-            <label for="review-comments">Additional Comments:</label>
-            <textarea id="review-comments" rows="4" placeholder="Additional comments..."></textarea>
+            <div id="review-cards" class="row g-4 review-cards"></div>
         </div>
-
-        <div class="review-cards">
-            <div class="review-card">
-                <h2>John Smith</h2>
-                <p class="stars">★★★★☆</p>
-                <p>Great bowling alley!</p>
-            </div>
-
-            <div class="review-card">
-                <h2>Tom Walker</h2>
-                <p class="stars">★★☆☆☆</p>
-                <p>The food wasn't good</p>
-            </div>
-        </div>
-    </div>
+    </main>
 
     <footer>
         <p>Contact Us:</p>
@@ -70,6 +66,9 @@
         </div>
         <p>&copy; 2024 Bowling Alley. All rights reserved.</p>
     </footer>
+
+    <script src="../js/reviews.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1N7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
