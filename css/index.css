@@ -17,24 +17,86 @@ body {
     background-repeat: no-repeat;
 }
 
+:root {
+    --retro-green: #6fffb0;
+    --retro-blue: #4ecbff;
+    --retro-pink: #ff6ec7;
+}
 
-.hero {
+.site-header {
     border-bottom: 1px solid #495057;
-    padding: 16px;
-    min-height: 280px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #212529;
+}
+
+.logo-circle {
+    width: 70px;
+    height: auto;
+    display: block;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     justify-content: center;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 1px rgba(78, 203, 255, 0.18), 0 0 14px rgba(255, 110, 199, 0.16);
+    transform: translateY(-1px);
+}
+
+.search-box {
+    border: 1px solid #495057;
+    background-color: #ffffff;
+    width: 170px;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 6px;
+}
+
+.search-box input {
+    border: none;
+    width: 100%;
+    padding: 4px;
+    font-size: 14px;
+    background: #ffffff;
+}
+
+.hero-section {
+    border-bottom: 1px solid #495057;
+    min-height: 360px;
     background-image: url("../images/bowling-lanes.jpg");
     background-size: cover;
     background-position: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero h1 {
-    font-size: 32px;
-    background-color: rgba(33, 37, 41, 0.85);
-    padding: 12px 24px;
-    border-radius: 8px;
+.hero-panel {
+    max-width: 760px;
+    padding: 1.75rem 2rem;
+    border-radius: 24px;
+    background: rgba(20, 24, 28, 0.72);
+    border: 1px solid rgba(111, 255, 176, 0.14);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.36), 0 0 18px rgba(78, 203, 255, 0.12);
+    backdrop-filter: blur(6px);
+    position: relative;
+    z-index: 1;
 }
 
 .home-row {
@@ -47,28 +109,101 @@ body {
     padding: 8px;
     background: #2b3035;
 }
-
-.reverse {
-    grid-template-columns: 1fr 1fr;
+.hero-copy,
+.section-copy {
+    max-width: 680px;
+    color: #ced4da;
+    line-height: 1.7;
 }
 
-.image-box {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    border-radius: 8px;
+.feature-section,
+.reviews-section {
+    position: relative;
+    overflow: hidden;
 }
 
-.text-box {
-    text-align: center;
+.feature-card,
+.review-preview {
+    border-radius: 18px;
+    background: #252a30;
+    color: #ffffff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;
 }
 
-.text-box h1 {
+.feature-card:hover,
+.review-preview:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.36), 0 0 16px rgba(78, 203, 255, 0.14), 0 0 20px rgba(255, 110, 199, 0.12);
+}
+
+.feature-image {
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.feature-button,
+.review-button {
+    border-color: rgba(111, 255, 176, 0.45);
+    color: #ffffff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.feature-button:hover,
+.review-button:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--retro-pink);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28), 0 0 12px rgba(78, 203, 255, 0.18);
     color: #ffffff;
 }
 
+.review-stars {
+    color: var(--retro-green);
+    letter-spacing: 0.08em;
+    font-weight: 700;
+}
+
+.review-preview-cta {
+    background: #28303a;
+    border: 1px solid rgba(255, 110, 199, 0.18);
+}
+
+.review-preview .card-body {
+    padding: 1.5rem;
+}
+
+.review-preview h3,
+.feature-card h2 {
+    text-shadow: 0 0 10px rgba(111, 255, 176, 0.12);
+}
+
+.review-preview .review-name {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.review-preview .review-stars {
+    color: var(--retro-green);
+}
+
+.review-preview .card-text {
+    color: #ced4da;
+}
+
+.review-card-placeholder {
+    border: 1px dashed rgba(255, 255, 255, 0.14);
+}
+
+footer {
+    border-top: 1px solid #495057;
+    background: #212529;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
 
 #contact-info {
     display: flex;
@@ -84,4 +219,41 @@ body {
 
 .nav {
     font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .hero-section {
+        min-height: 320px;
+    }
+
+    .hero-panel {
+        padding: 1.25rem 1rem;
+    }
+
+    .feature-image {
+        height: 190px;
+    }
+
+    .review-preview .card-body {
+        padding: 1.25rem;
+    }
+
+    #contact-info {
+        flex-direction: column;
+        gap: 4px;
+    }
 }

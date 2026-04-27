@@ -33,14 +33,14 @@ const menuData = {
             name: 'Spinach Artichoke Dip',
             description: 'Warm spinach dip served with toasted pita chips',
             price: '$8.49',
-            imageUrl: '',
+            imageUrl: '../images/food/spinach-dip.jpg',
             details: 'Creamy spinach and artichoke dip baked until bubbling and golden, then served with crisp pita chips for easy sharing.'
         },
         {
             name: 'Pretzel Bites',
             description: 'Soft pretzel bites served with beer cheese dip',
             price: '$7.49',
-            imageUrl: '',
+            imageUrl: '../images/food/pretzel-bites.jpg',
             details: 'Warm, salted pretzel bites with a soft center and golden crust, paired with a rich beer cheese dip for a satisfying starter.'
         }
     ],
@@ -77,14 +77,14 @@ const menuData = {
             name: 'Buffalo Chicken Sandwich',
             description: 'Crispy chicken breast tossed in buffalo sauce with lettuce and ranch',
             price: '$13.49',
-            imageUrl: '',
+            imageUrl: '../images/food/buffalo-chicken-sandwich.jpg',
             details: 'A crispy chicken breast coated in tangy buffalo sauce, topped with fresh lettuce and cool ranch dressing on a toasted bun.'
         },
         {
             name: 'Grilled Salmon',
             description: 'Seasoned salmon filet served with rice and vegetables',
             price: '$15.99',
-            imageUrl: '',
+            imageUrl: '../images/food/grilled-salmon.jpg',
             details: 'Lightly seasoned salmon grilled until flaky and tender, served with seasoned rice and fresh vegetables for a balanced entree.'
         }
     ],
@@ -93,80 +93,98 @@ const menuData = {
             name: 'Chocolate Lava Cake',
             description: 'Warm chocolate cake with a molten center',
             price: '$6.99',
-            imageUrl: '',
+            imageUrl: '../images/food/chocolate-lava-cake.jpg',
             details: 'A rich chocolate cake baked until the outside is set and the inside stays molten, served warm for a decadent finish.'
         },
         {
             name: 'Cheesecake Slice',
             description: 'Classic creamy cheesecake with a graham cracker crust',
             price: '$6.49',
-            imageUrl: '',
+            imageUrl: '../images/food/cheesecake-slice.jpg',
             details: 'Smooth, creamy cheesecake on a buttery graham cracker crust. A simple dessert with a clean finish.'
         },
         {
             name: 'Ice Cream Sundae',
             description: 'Vanilla ice cream topped with chocolate sauce and whipped cream',
             price: '$5.99',
-            imageUrl: '',
+            imageUrl: '../images/food/ice-cream-sundae.jpg',
             details: 'A classic sundae built with creamy vanilla ice cream, chocolate sauce, whipped cream, and a cherry on top.'
         },
         {
             name: 'Funnel Cake Fries',
             description: 'Crispy fried dough dusted with powdered sugar',
             price: '$5.49',
-            imageUrl: '',
+            imageUrl: '../images/food/funnel-cake-fries.jpg',
             details: 'Golden funnel cake strips with a light, crispy texture and sweet powdered sugar on top for a fun carnival-style dessert.'
         }
     ]
 };
 
 const menuPage = document.querySelector('.menu-page');
+const menuContainer = menuPage.querySelector('.container');
 
-Object.keys(menuData).forEach(category => {
+for (const category in menuData) {
+    if (!Object.prototype.hasOwnProperty.call(menuData, category)) {
+        continue;
+    }
+
     const categoryTitle = category;
     const categoryContainer = document.createElement('div');
+    categoryContainer.className = 'menu-category mb-5';
 
     const categoryHeading = document.createElement('h2');
+    categoryHeading.className = 'menu-category-title';
     categoryHeading.textContent = categoryTitle;
     categoryContainer.appendChild(categoryHeading);
 
     const gridContainer = document.createElement('div');
-    gridContainer.className = 'menu-grid';
+    gridContainer.className = 'row g-4';
 
-    menuData[category].forEach(item => {
+    const categoryItems = menuData[category];
+    for (let itemIndex = 0; itemIndex < categoryItems.length; itemIndex += 1) {
+        const item = categoryItems[itemIndex];
         const menuItem = document.createElement('div');
-        menuItem.className = 'menu-item';
+        menuItem.className = 'menu-item col-12 col-md-6 col-xl-4';
+        menuItem.setAttribute('data-name', item.name);
+        menuItem.setAttribute('data-price', item.price);
+        menuItem.setAttribute('data-description', item.description);
 
         menuItem.innerHTML = `
-                <div class="item-image" style="background-image: url('${item.imageUrl}')"></div>
-                <div class="item-copy">
-                    <h3>${item.name}</h3>
-                    <p>${item.description}</p>
+                <div class="menu-card card h-100 border-0">
+                    <span class="price-circle">${item.price}</span>
+                    <div class="menu-image-wrap position-relative">
+                        <div class="item-image card-img-top" style="background-image: url('${item.imageUrl}')"></div>
+                    </div>
+                    <div class="item-copy card-body">
+                        <h3 class="card-title h5">${item.name}</h3>
+                        <p class="card-text mb-0">${item.description}</p>
+                    </div>
                 </div>
-                <div class="price-circle">${item.price}</div>
             `;
 
         gridContainer.appendChild(menuItem);
-    });
+    }
 
     categoryContainer.appendChild(gridContainer);
-    menuPage.appendChild(categoryContainer);
-});
+    menuContainer.appendChild(categoryContainer);
+}
 
 const menuItems = document.querySelectorAll('.menu-item');
 
-menuItems.forEach((item, index) => {
-    item.addEventListener('click', function (e) {
-        const itemName = this.querySelector('h3').textContent;
-        const itemDescription = this.querySelector('p').textContent;
-        const itemPrice = this.querySelector('.price-circle').textContent;
+for (let itemIndex = 0; itemIndex < menuItems.length; itemIndex += 1) {
+    const item = menuItems[itemIndex];
+
+    item.addEventListener('click', function () {
+        const itemName = this.getAttribute('data-name');
+        const itemDescription = this.getAttribute('data-description');
+        const itemPrice = this.getAttribute('data-price');
         const expandedDetails = getDetailsFromData(itemName);
 
         openModal(itemName, itemDescription, itemPrice, expandedDetails);
     });
 
     item.style.cursor = 'pointer';
-});
+}
 
 const modal = document.getElementById('itemModal');
 if (modal) {
