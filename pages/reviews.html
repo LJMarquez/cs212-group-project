@@ -35,9 +35,18 @@
         </div>
     </header>
 
-    <main class="reviews-page py-5">
-        <div class="container">
-            <h1 class="display-5 fw-semibold text-center mb-4">Reviews</h1>
+    <main class="reviews-page">
+        <section class="page-hero reviews-hero d-flex align-items-center text-center">
+            <div class="container py-5">
+                <div class="hero-panel mx-auto">
+                    <h1 class="display-4 fw-bold mb-3 fs-1">Reviews</h1>
+                    <p class="hero-copy mx-auto mb-0">See what guests are saying and share your own experience at Starlight Lanes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-content py-5">
+            <div class="container">
 
             <div class="reviews-top-row d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-4">
                 <h2 class="average-rating mb-0">Average Rating: <span id="average-rating-value">4.8</span> <span id="average-rating-stars" class="stars">★★★★☆</span></h2>
@@ -68,6 +77,7 @@
 
             <div id="review-cards" class="row g-4 review-cards"></div>
         </div>
+        </section>
     </main>
 
     <footer>
@@ -81,7 +91,6 @@
     </footer>
 
     <script src="../js/reviews.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1N7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>

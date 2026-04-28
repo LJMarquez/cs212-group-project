@@ -120,70 +120,71 @@ const menuData = {
     ]
 };
 
-const menuPage = document.querySelector('.menu-page');
-const menuContainer = menuPage.querySelector('.container');
+const menuContainer = document.getElementById('menu-content');
 
-for (const category in menuData) {
-    if (!Object.prototype.hasOwnProperty.call(menuData, category)) {
-        continue;
+if (menuContainer) {
+    for (const category in menuData) {
+        if (!Object.prototype.hasOwnProperty.call(menuData, category)) {
+            continue;
+        }
+
+        const categoryTitle = category;
+        const categoryContainer = document.createElement('div');
+        categoryContainer.className = 'menu-category mb-5';
+
+        const categoryHeading = document.createElement('h2');
+        categoryHeading.className = 'menu-category-title';
+        categoryHeading.textContent = categoryTitle;
+        categoryContainer.appendChild(categoryHeading);
+
+        const gridContainer = document.createElement('div');
+        gridContainer.className = 'row g-4';
+
+        const categoryItems = menuData[category];
+        for (let itemIndex = 0; itemIndex < categoryItems.length; itemIndex += 1) {
+            const item = categoryItems[itemIndex];
+            const menuItem = document.createElement('div');
+            menuItem.className = 'menu-item col-12 col-md-6 col-xl-4';
+            menuItem.setAttribute('data-name', item.name);
+            menuItem.setAttribute('data-price', item.price);
+            menuItem.setAttribute('data-description', item.description);
+
+            menuItem.innerHTML = `
+                    <div class="menu-card card h-100 border-0">
+                        <span class="price-circle">${item.price}</span>
+                        <div class="menu-image-wrap position-relative">
+                            <div class="item-image card-img-top" style="background-image: url('${item.imageUrl}')"></div>
+                        </div>
+                        <div class="item-copy card-body">
+                            <h3 class="card-title h5">${item.name}</h3>
+                            <p class="card-text mb-0">${item.description}</p>
+                        </div>
+                    </div>
+                `;
+
+            gridContainer.appendChild(menuItem);
+        }
+
+        categoryContainer.appendChild(gridContainer);
+        menuContainer.appendChild(categoryContainer);
     }
 
-    const categoryTitle = category;
-    const categoryContainer = document.createElement('div');
-    categoryContainer.className = 'menu-category mb-5';
+    const menuItems = document.querySelectorAll('.menu-item');
 
-    const categoryHeading = document.createElement('h2');
-    categoryHeading.className = 'menu-category-title';
-    categoryHeading.textContent = categoryTitle;
-    categoryContainer.appendChild(categoryHeading);
+    for (let itemIndex = 0; itemIndex < menuItems.length; itemIndex += 1) {
+        const item = menuItems[itemIndex];
 
-    const gridContainer = document.createElement('div');
-    gridContainer.className = 'row g-4';
+        item.addEventListener('click', function () {
+            const itemName = this.getAttribute('data-name');
+            const itemDescription = this.getAttribute('data-description');
+            const itemPrice = this.getAttribute('data-price');
+            const expandedDetails = getDetailsFromData(itemName);
 
-    const categoryItems = menuData[category];
-    for (let itemIndex = 0; itemIndex < categoryItems.length; itemIndex += 1) {
-        const item = categoryItems[itemIndex];
-        const menuItem = document.createElement('div');
-        menuItem.className = 'menu-item col-12 col-md-6 col-xl-4';
-        menuItem.setAttribute('data-name', item.name);
-        menuItem.setAttribute('data-price', item.price);
-        menuItem.setAttribute('data-description', item.description);
+            openModal(itemName, itemDescription, itemPrice, expandedDetails);
+        });
 
-        menuItem.innerHTML = `
-                <div class="menu-card card h-100 border-0">
-                    <span class="price-circle">${item.price}</span>
-                    <div class="menu-image-wrap position-relative">
-                        <div class="item-image card-img-top" style="background-image: url('${item.imageUrl}')"></div>
-                    </div>
-                    <div class="item-copy card-body">
-                        <h3 class="card-title h5">${item.name}</h3>
-                        <p class="card-text mb-0">${item.description}</p>
-                    </div>
-                </div>
-            `;
-
-        gridContainer.appendChild(menuItem);
+        item.style.cursor = 'pointer';
     }
-
-    categoryContainer.appendChild(gridContainer);
-    menuContainer.appendChild(categoryContainer);
-}
-
-const menuItems = document.querySelectorAll('.menu-item');
-
-for (let itemIndex = 0; itemIndex < menuItems.length; itemIndex += 1) {
-    const item = menuItems[itemIndex];
-
-    item.addEventListener('click', function () {
-        const itemName = this.getAttribute('data-name');
-        const itemDescription = this.getAttribute('data-description');
-        const itemPrice = this.getAttribute('data-price');
-        const expandedDetails = getDetailsFromData(itemName);
-
-        openModal(itemName, itemDescription, itemPrice, expandedDetails);
-    });
-
-    item.style.cursor = 'pointer';
 }
 
 const modal = document.getElementById('itemModal');
