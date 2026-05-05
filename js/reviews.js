@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function starsFromRating(ratingValue) {
-        const safeRating = Math.max(0, Math.min(5, Number(ratingValue) || 0));
+        const safeRating = Math.max(0, Math.min(5, Number(ratingValue)));
         let stars = "";
 
         for (let i = 0; i < 5; i += 1) {
